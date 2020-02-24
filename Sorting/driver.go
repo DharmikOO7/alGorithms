@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/DharmikOO7/alGorithms/Sorting/sorting"
 )
 
 func main() {
@@ -11,7 +13,17 @@ func main() {
 	fmt.Printf("Enter %d elements: ", n)
 	arr := inputArray(n)
 	fmt.Println("Input array: ", arr)
-	insertionSort(arr)
+	fmt.Println("Please select sorting algorithm: \n 1. Insertion sort \n 2. Selection sort \n 3. Merge Sort")
+	var choice int
+	fmt.Scan(&choice)
+	switch choice {
+	case 1:
+		sorting.InsertionSort(arr)
+	case 2:
+		sorting.SelectionSort(arr)
+	case 3:
+		sorting.MergeSort(0, len(arr)-1, arr)
+	}
 	fmt.Println("Sorted array: ", arr)
 }
 
@@ -21,16 +33,4 @@ func inputArray(n int) []int {
 		fmt.Scan(&arr[i])
 	}
 	return arr
-}
-
-func insertionSort(arr []int) {
-	for j := 0; j < len(arr); j++ {
-		var key = arr[j]
-		var i = j - 1
-		for i > -1 && arr[i] > key {
-			arr[i+1] = arr[i]
-			i--
-		}
-		arr[i+1] = key
-	}
 }

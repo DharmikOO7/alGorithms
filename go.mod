@@ -1,3 +1,3 @@
-module github.com/DharmikOO7/alGorithms.git
+module github.com/DharmikOO7/alGorithms
 
 go 1.13
