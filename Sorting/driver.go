@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/DharmikOO7/alGorithms/Sorting/sorting"
+	"github.com/DharmikOO7/alGorithms/helper"
 )
 
 func main() {
@@ -11,7 +12,7 @@ func main() {
 	fmt.Print("Enter the size of array: ")
 	fmt.Scan(&n)
 	fmt.Printf("Enter %d elements: ", n)
-	arr := inputArray(n)
+	arr := helper.InputArray(n)
 	fmt.Println("Input array: ", arr)
 	fmt.Println("Please select sorting algorithm: \n 1. Insertion sort \n 2. Selection sort \n 3. Merge Sort")
 	var choice int
